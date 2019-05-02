@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-for i in range(9):
-    for j in range(10):
-        if i == 8 and j == 9:
-            print("{}{}".format(i, j))
-        elif i < j:
-            print("{}{}, ".format(i, j), end="")
+def uppercase(str):
+    for i in str:
+        if ord(i) < 123 and ord(i) > 96:
+            j = ord(i) - 32
+            i = chr(j)
+        print("{:c}".format(ord(i)), end="")
+    print()
