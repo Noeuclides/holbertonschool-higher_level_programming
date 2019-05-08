@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -24,7 +22,7 @@ int is_palindrome(listint_t **head)
 		aux = aux->next;
 	}
 	n = i - 1;
-	for (j = n, l = 0; j > (n / 2) && l < (n / 2); j--, l++)
+	for (j = n, l = 0; j > (n / 2); j--, l++)
 	{
 		if (array[j] != array[l])
 			return (0);
