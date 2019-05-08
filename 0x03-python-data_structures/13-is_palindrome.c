@@ -23,10 +23,7 @@ int is_palindrome(listint_t **head)
 		array[i] = aux->n;
 		aux = aux->next;
 	}
-	if (i % 2 == 0)
-		n = i - 1;
-	else
-		n = i;
+	n = i - 1;
 	for (j = n, l = 0; j > (n / 2) && l < (n / 2); j--, l++)
 	{
 		if (array[j] != array[l])
