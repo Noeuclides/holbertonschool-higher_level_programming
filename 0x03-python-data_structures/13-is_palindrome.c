@@ -7,7 +7,7 @@
 *
 *@head: linked list.
 *
-*Return: 1 if is palindrome, -1 if not
+*Return: 1 if is palindrome, 0 if not
 */
 int is_palindrome(listint_t **head)
 {
@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	int i, j, n, l;
 	listint_t *aux;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return(1);
 	aux = *head;
 	for (i = 0; aux != NULL; i++)
@@ -30,7 +30,7 @@ int is_palindrome(listint_t **head)
 	for (j = n, l = 0; j > (n / 2) && l < (n / 2); j--, l++)
 	{
 		if (array[j] != array[l])
-			return (-1);
+			return (0);
 	}
 	return (1);
 }
