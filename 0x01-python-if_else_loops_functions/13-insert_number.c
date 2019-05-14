@@ -4,32 +4,39 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
+ * create_node - create a new node.
  *
- * Return: Always 0.
+ * @new: pointer to a new node created.
+ *
+ * @num: integer value of the node
+ *
+ * Return: Address of the new node or NULL if it fails.
  */
+
 listint_t *create_node(listint_t *new, int num)
 {
 	new = malloc(sizeof(listint_t));
-        if (!new)
-	{
+	if (!new)
 		return (NULL);
-	}
 	new->n = num;
 	new->next = NULL;
-	return (NULL);
+	return (new);
 }
 
 /**
- * main - check the code for Holberton School students.
+ * insert_node - compare values of a linked list with a new node to insert.
  *
- * Return: Always 0.
+ * @number: value of the node to add
+ *
+ * @head: address of the first node
+ *
+ * Return: Address of the new node or NULL if it fails.
  */
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new = NULL;
 	listint_t *aux, *prev;
-        int i;
+	int i;
 
 	new = create_node(new, number);
 	if (!new)
@@ -43,7 +50,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	aux = aux->next;
 	prev = *head;
-	for (i = 0; aux->next == NULL; i++)
+	for (i = 0; aux->next != NULL; i++)
 	{
 		if (aux->n >= new->n)
 		{
@@ -56,6 +63,5 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	aux->next = new;
 	return (new);
-
 }
 
