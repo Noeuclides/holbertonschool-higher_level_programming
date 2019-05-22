@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-class Square:
-    def __init__(self, size=0):
+class Node:
+    def __init__(self, data=0):
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -8,8 +8,7 @@ class Square:
         else:
             self.__size = size
 
-    @property
-    def size(self):
-        return(self.__size)
-    def size(self, value):
-        pass
+    def data(self):
+        return(self.__size ** 2)
+    def data(self, value):
+
