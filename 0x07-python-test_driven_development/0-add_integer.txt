@@ -1,0 +1,8 @@
+>>> add_integer(2, 3)
+5
+>>> add_integer(a, 3)
+
+>>> add_integer(2, a)
+
+>>> add_integer(2, 3)
+
