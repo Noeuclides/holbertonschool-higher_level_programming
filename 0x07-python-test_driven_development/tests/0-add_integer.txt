@@ -70,3 +70,12 @@ Now use it:
     Traceback (most recent call last):
     NameError: name 'a' is not defined
     
+::
+    >>> add_integer(b, a)
+    Traceback (most recent call last):
+    NameError: name 'b' is not defined 
+
+::
+    >>> add_integer(float('nan'), 4)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer

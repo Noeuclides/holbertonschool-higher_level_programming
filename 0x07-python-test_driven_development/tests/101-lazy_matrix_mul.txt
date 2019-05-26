@@ -1,0 +1,72 @@
+``lazy_matrix_mul(m_a, m_b)``.
+
+=======
+
+``lazy_matrix_mul(m_a, m_b)`` returns the product of its arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul 
+
+
+Now use it:
+
+    >>> lazy_matrix_mul(2, 98)
+    100
+
+::
+
+    >>> lazy_matrix_mul(2.0, 98.1)
+    100
+
+::
+    >>> lazy_matrix_mul('asd', 10)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+    >>> lazy_matrix_mul(19, 'wwfj')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+
+::
+    >>> lazy_matrix_mul(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+    >>> lazy_matrix_mul(1e300, 2e3040)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+::
+    >>> lazy_matrix_mul( , )
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+::
+    >>> lazy_matrix_mul(-2, 23)
+    21
+
+::
+    >>> lazy_matrix_mul(23, -3)
+    20
+
+::
+    >>> lazy_matrix_mul(-2, -2)
+    -4
+
+::
+    >>> lazy_matrix_mul(0, )
+    98
+
+::
+    >>> lazy_matrix_mul(,5)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+::
+    >>> lazy_matrix_mul(3, a)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
+    

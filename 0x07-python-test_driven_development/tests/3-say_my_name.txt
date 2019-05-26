@@ -20,7 +20,7 @@ Now use it:
 ::
     >>> say_my_name('asd', 10)
     Traceback (most recent call last):
-    TypeError: first_name must be a string
+    TypeError: last_name must be a string
 
 ::
     >>> say_my_name(19, 'wwfj')

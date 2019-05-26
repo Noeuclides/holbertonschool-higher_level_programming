@@ -1,72 +1,70 @@
-``add_integer(a, b=98)``.
+``print_square(size)``.
 
 =======
 
-``add_integer(a, b=98)`` returns the product of its arguments.  For numbers,
+``print_square(size)`` returns the product of its arguments.  For numbers,
 that value is equivalent to using the ``+`` operator.
 
-    >>> add_integer = __import__('0-add_integer').add_integer 
+    >>> print_square = __import__('4-print_square').print_square 
 
 
 Now use it:
 
-    >>> add_integer(2, 98)
-    100
+    >>> print_square(2)
+    ##
+    ##
 
 ::
 
-    >>> add_integer(2.0, 98.1)
-    100
+    >>> print_square(0)
+    >>>
 
 ::
-    >>> add_integer('asd', 10)
+    >>> print_square(-2)
     Traceback (most recent call last):
-    TypeError: a must be an integer
+    ValueError: size must be >= 0
 
 ::
-    >>> add_integer(19, 'wwfj')
+    >>> print_square(2.5)
     Traceback (most recent call last):
-    TypeError: b must be an integer
-
+    TypeError: size must be an integer
 
 ::
-    >>> add_integer(None)
+    >>> print_square('string')
     Traceback (most recent call last):
-    TypeError: a must be an integer
+    TypeError: size must be an integer
 
 ::
-    >>> add_integer(1e300, 2e3040)
+    >>> print_square(1e300)
     Traceback (most recent call last):
-    OverflowError: cannot convert float infinity to integer
+    TypeError: size must be an integer
 
 ::
-    >>> add_integer( , )
+    >>> print_square(13000000000000000000)
     Traceback (most recent call last):
-    SyntaxError: invalid syntax
+    OverflowError: cannot fit 'int' into an index-sized integer
 
 ::
-    >>> add_integer(-2, 23)
-    21
-
-::
-    >>> add_integer(23, -3)
-    20
-
-::
-    >>> add_integer(-2, -2)
-    -4
-
-::
-    >>> add_integer(0, )
-    98
-
-::
-    >>> add_integer(,5)
-    Traceback (most recent call last):
-    SyntaxError: invalid syntax
-
-::
-    >>> add_integer(3, a)
+    >>> print_square(a)
     Traceback (most recent call last):
     NameError: name 'a' is not defined
+
+::
+    >>> print_square(-2.3)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
     
+::
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+::
+    >>> print_square(2, 3)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
