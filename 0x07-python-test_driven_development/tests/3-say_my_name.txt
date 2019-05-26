@@ -18,11 +18,6 @@ Now use it:
     My name is John 
 
 ::
-    >>> say_my_name('asd', 10)
-    Traceback (most recent call last):
-    TypeError: last_name must be a string
-
-::
     >>> say_my_name(19, 'wwfj')
     Traceback (most recent call last):
     TypeError: first_name must be a string
@@ -32,3 +27,18 @@ Now use it:
     >>> say_my_name(None)
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
+::
+    >>> say_my_name(None, )
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+    >>> say_my_name('asd', 10)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+    >>> say_my_name( , )
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
