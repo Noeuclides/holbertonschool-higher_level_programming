@@ -25,7 +25,7 @@ Now use it:
     ValueError: size must be >= 0
 
 ::
-    >>> print_square(2.5)
+    >>> print_square(3.5)
     Traceback (most recent call last):
     TypeError: size must be an integer
 
