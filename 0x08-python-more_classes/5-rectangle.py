@@ -61,3 +61,6 @@ class Rectangle:
         rec = type(self).__name__
         m = "{}({}, {})"
         return(m.format(rec, self.width, self.height))
+
+    def __del__(self):
+        print("Bye rectangle...")
