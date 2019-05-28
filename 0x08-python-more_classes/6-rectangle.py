@@ -25,7 +25,6 @@ class Rectangle:
     def width(self, value):
         print("Bye rectangle...")
         del self._width
-        Rectangle.number_of_instances -= 1
 
     @property
     def height(self):
@@ -44,7 +43,6 @@ class Rectangle:
     def height(self, value):
         print("Bye rectangle...")
         del self._height
-        Rectangle.number_of_instances -= 1
 
     def area(self):
         return(self.width * self.height)
@@ -67,3 +65,6 @@ class Rectangle:
         rec = type(self).__name__
         m = "{}({}, {})"
         return(m.format(rec, self.width, self.height))
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
