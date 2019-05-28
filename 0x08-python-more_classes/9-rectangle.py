@@ -2,6 +2,7 @@
 class Rectangle:
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         Rectangle.number_of_instances += 1
@@ -56,9 +57,9 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return("")
         r = []
-        m = '#' * self.width
+        m = self.width
         for i in range(self.height):
-            r.append(m + '\n')
+            r.append("{}".format(self.print_symbol*m) + '\n')
         return("".join(r))
 
     def __repr__(self):
@@ -68,3 +69,22 @@ class Rectangle:
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if Rectangle.area(rect_1) == Rectangle.area(rect_2):
+            return(rect_1)
+        elif Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+            return(rect_1)
+        else:
+            return(rect_2)
+
+    @classmethod
+    def square(cls, size=0):
+        w = cls(size)
+        h = cls(size)
+        return(w, h)
