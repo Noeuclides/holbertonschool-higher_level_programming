@@ -2,6 +2,7 @@
 class Rectangle:
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         Rectangle.number_of_instances += 1
@@ -56,9 +57,9 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return("")
         r = []
-        m = '#' * self.width
+        m = self.width
         for i in range(self.height):
-            r.append(m + '\n')
+            r.append("{}".format(self.print_symbol*m) + '\n')
         return("".join(r))
 
     def __repr__(self):
