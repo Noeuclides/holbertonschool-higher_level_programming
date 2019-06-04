@@ -1,0 +1,29 @@
+``:print_sorted(self)``.
+
+=======
+
+``print_sorted(self)`` returns a new matrix with the division of a matrix and a number.
+
+::
+
+    >>> matrix_divided = __import__('1-print_sorted').matrix_divided 
+    >>> matrix = [[9,12,15], [1,2,3]]
+    >>> matrix_divided(matrix, 3)
+    [[3.0, 4.0, 5.0], [0.33, 0.67, 1.0]]
+
+::
+    >>> matrix = [[9,12,15], [3]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+::
+    >>> matrix_divided(3, 3)
+    Traceback (most recent call last):
+    TypeError: 'int' object is not subscriptable
+
+::
+    >>> m = [12, "st", -12, [12, 3]]
+    >>> matrix_divided(m, 1)
+    Traceback (most recent call last):
+TypeError: object of type 'int' has no len()

@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+"""
+module with the class
+BaseGeometry
+"""
+
+
 class BaseGeometry:
+    """
+    empty class
+    """
     pass
 
-def area(self):
-    try:
-        pass
-    except Exception:
-        print("area() is not implemented")
+    def area(self):
+        """
+        area of
+        """
+        raise Exception("area() is not implemented")
