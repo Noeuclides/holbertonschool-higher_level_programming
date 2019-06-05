@@ -26,6 +26,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """
     class with an heritance of BaseGeometry
@@ -34,11 +35,13 @@ class Rectangle(BaseGeometry):
         """
         constructor of the class Rectangle
         """
-        self.__width = width
-        self.__height = height
         super().integer_validator("width", width)
         super().integer_validator("height", height)
-        str("[Rectangle] {}{}".format(width,height))
+        self.__width = width
+        self.__height = height
+
+    def __str__(self):
+        return("[Rectangle] {}/{}".format(self.__width, self.__height))
 
     def area(self):
         return(self.__width * self.__height)

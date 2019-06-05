@@ -1,0 +1,51 @@
+``:integer_validator(self, name, value)``.
+
+=======
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry 
+    >>> bg.integer_validator(1)
+    >>> bg.integer_validator(1)
+    >>> my_list.print_sorted()
+    [1, 1, 1, 1, 1]
+
+::
+    >>> my_list = MyList()
+    >>> bg.integer_validator(-1343)
+    >>> bg.integer_validator(-2321)
+    >>> my_list.print_sorted()
+    [1, -13, -123, -1343, -2321]
+
+::
+    >>> my_list = MyList()
+    >>> bg.integer_validator(2.1)
+    >>> my_list.print_sorted()
+    [1, -13, -123, -1343, -2321]
+    Traceback (most recent call last):
+    TypeError: 'int' object is not subscriptable
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(-2321)
+    >>> my_list.print_sorted()
+    [1, -13, -123, -1343, -2321]
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
+
+::
+    >>> my_list = MyList()
+    >>> bg.integer_validator(1)
+    >>> bg.integer_validator(-2321)
+    >>> my_list.print_sorted()
+    [1, -13, -123, -1343, -2321]
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
+
+::
+    >>> my_list = MyList()
+    >>> bg.integer_validator(1)
+    >>> bg.integer_validator(-2321)
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
