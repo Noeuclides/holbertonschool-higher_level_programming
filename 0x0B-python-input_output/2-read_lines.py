@@ -5,7 +5,9 @@ def read_lines(filename="", nb_lines=0):
         for line in r_file:
             i += 1
         if nb_lines <= 0 or nb_lines >= i:
-            print(r_file.read(), end='')
+            r_file.seek(0)
+            print(r_file.read(), end="")
         else:
+            r_file.seek(0)
             for m in range(nb_lines):
-                print(r_file.readlines())
+                print(r_file.readline(), end="")

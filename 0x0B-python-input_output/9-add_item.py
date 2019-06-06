@@ -1,9 +1,14 @@
 #!/usr/bin/python3
 import sys
-import json
-from 7-save_to_json_file.py import save_to_json_file
-from 8-load_from_json_file.py import load_from_json_file
+import os
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
 
-def class_to_json(obj):
-json.loads('[os.arg[1]')
+my_list = []
+filename = 'add_item.json'
+if os.path.isfile(filename):
+    if os.stat(filename).st_size > 0:
+        add_item = load_from_json_file(filename)
+my_list += [arg for arg in sys.argv[1:]]
+save_to_json_file(my_list, filename)
