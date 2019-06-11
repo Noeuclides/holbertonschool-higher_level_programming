@@ -1,16 +1,26 @@
 #!/usr/bin/python3
-
+"""
+module with square class
+"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
+    """
+    square that inheritance from Rectangle class
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        constructor of the class
+        """
         super().__init__(size, size, x, y, id)
         self.width = size
         self.height = size
 
     def __str__(self):
         """
+        print class information
         """
         i = self.id
         x = self.x
@@ -20,10 +30,16 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """
+        size getter
+        """
         return(self.width)
 
     @size.setter
     def size(self, value):
+        """
+        size setter
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("width"))
         elif value <= 0:
@@ -36,12 +52,7 @@ class Square(Rectangle):
         """
         update attribute values
         """
-        if args is not None:
-            d = ['id', 'width', 'height', 'x', 'y']
-            i = 0
-            for arg in args:
-                setattr(self, d[i], arg)
-                i += 1
-        else:
-            for key, value in kwargs:
-                key = value
+        if len(args) > 2:
+            args = list(args)
+            args.insert(2, args[1])
+        super().update(*args, **kwargs)

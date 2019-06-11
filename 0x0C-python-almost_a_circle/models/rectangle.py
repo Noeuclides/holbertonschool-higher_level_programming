@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """
+module that has Rectangle class methods
 """
 from models.base import Base
 
 
 class Rectangle(Base):
     """
+    class that inheritance from Base
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
+        constructor of Rectangle
         """
         super().__init__(id)
         self.x = x
@@ -19,11 +22,13 @@ class Rectangle(Base):
 
     def area(self):
         """
+        method that calculate the rectangle area
         """
         return(self.width * self.height)
 
     def display(self):
         """
+        method that displays the rectangle
         """
         for i in range(self.y):
             print()
@@ -32,6 +37,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
+        print information of the rectangle
         """
         i = self.id
         x = self.x
@@ -44,22 +50,28 @@ class Rectangle(Base):
         """
         update attribute values
         """
-        if args is not None:
+        if args:
             d = ['id', 'width', 'height', 'x', 'y']
             i = 0
             for arg in args:
                 setattr(self, d[i], arg)
                 i += 1
         else:
-            for key, value in kwargs:
-                key = value
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
 
     @property
     def width(self):
+        """
+        getter
+        """
         return(self.__width)
 
     @width.setter
     def width(self, value):
+        """
+        setter
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("width"))
         elif value <= 0:
@@ -69,10 +81,16 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        height's getter
+        """
         return(self.__height)
 
     @height.setter
     def height(self, value):
+        """
+        setter
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("height"))
         elif value <= 0:
@@ -82,10 +100,16 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        x's getter
+        """
         return(self.__x)
 
     @x.setter
     def x(self, value):
+        """
+        setter
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("x"))
         elif value < 0:
@@ -95,10 +119,16 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+        y getter
+        """
         return(self.__y)
 
     @y.setter
     def y(self, value):
+        """
+        x setter
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("y"))
         elif value < 0:
