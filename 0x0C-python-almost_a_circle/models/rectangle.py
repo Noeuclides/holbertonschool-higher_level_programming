@@ -65,10 +65,10 @@ class Rectangle(Base):
         rectangle attributes in dictionary
         """
         i = self.id
-        x = self.x
-        y = self.y
-        w = self.width
-        h = self.height
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
         dict = {"id": i, "width": w, "height": h, "x": x, "y": y}
         return(dict)
 
