@@ -28,22 +28,32 @@ class Base:
         """
         JSON string representation of list_dictionaries
         """
-        if list_dictionaries:
+        if list_dictionaries or len(list_dictionaries) != 0:
             return(json.dumps(list_dictionaries))
         else:
-            return([])
+            return('[]')
 
     @classmethod
     def save_to_file(cls, list_objs):
         """
         writes the JSON string representation of list_objs to a file
         """
-        array = []
+        listj = []
         f = cls.__name__ + '.json'
         with open(f, 'w') as file:
             if list_objs:
                 for k in list_objs:
-                    array.append(k.to_dictionary())
-                file.write(cls.to_json_string(array))
+                    listj.append(k.to_dictionary())
+                file.write(cls.to_json_string(listj))
             else:
-                file.dump(array, file)
+                file.dump(listj, file)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        returns list of JSON Sring
+        """
+        if json_string:
+            return(json.loads(json_string))
+        else:
+            return([])
