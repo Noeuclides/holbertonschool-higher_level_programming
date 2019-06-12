@@ -62,5 +62,7 @@ class Square(Rectangle):
         dict_sq = {}
         dict_sq = super().to_dictionary()
         dict_sq["size"] = dict_sq["width"]
-        dict_sq["size"] = dict_sq["height"]
+        del dict_sq["width"]
+        del dict_sq["height"]
+        print(dict_sq)
         return(dict_sq)
