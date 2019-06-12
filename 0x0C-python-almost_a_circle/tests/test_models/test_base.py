@@ -5,9 +5,9 @@ from models.base import Base
 
 
 class test_Base_methods(unittest.TestCase):
-
-    val = 0
-
+    """
+    unittest base
+    """
     def setUp(self):
         self.b1 = Base()
         self.b2 = Base()

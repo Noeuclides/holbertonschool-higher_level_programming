@@ -5,7 +5,9 @@ import unittest
 
 
 class Test_Square_methods(unittest.TestCase):
-
+    """
+    unittest Square
+    """
     def setUp(self):
         self.sq1 = Square(1)
         self.sq2 = Square(5)

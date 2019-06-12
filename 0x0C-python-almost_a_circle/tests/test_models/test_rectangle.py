@@ -5,6 +5,9 @@ from models.rectangle import Rectangle
 
 
 class Test_Rectangle_Methods(unittest.TestCase):
+    """
+    unittest Rectangle
+    """
 
     def setUp(self):
         self.r1 = Rectangle(1, 1)
