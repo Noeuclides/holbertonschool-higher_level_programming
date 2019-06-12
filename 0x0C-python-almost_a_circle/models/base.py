@@ -46,7 +46,7 @@ class Base:
                     listj.append(k.to_dictionary())
                 file.write(cls.to_json_string(listj))
             else:
-                file.write(listj)
+                file.write(cls.to_json_string(listj))
 
     @staticmethod
     def from_json_string(json_string):
