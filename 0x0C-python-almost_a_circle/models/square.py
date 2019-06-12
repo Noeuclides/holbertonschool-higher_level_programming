@@ -64,5 +64,4 @@ class Square(Rectangle):
         dict_sq["size"] = dict_sq["width"]
         del dict_sq["width"]
         del dict_sq["height"]
-        print(dict_sq)
         return(dict_sq)
