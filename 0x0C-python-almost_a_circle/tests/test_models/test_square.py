@@ -19,7 +19,7 @@ class Test_Square_methods(unittest.TestCase):
         self.assertEqual(self.sq1.y, 0)
 
     def test_square_id(self):
-        self.assertEqual(self.sq1.id, 3)
+        self.assertEqual(self.sq1.id, 19)
 
     def test_update_square(self):
         self.sq2.update(10, 1)

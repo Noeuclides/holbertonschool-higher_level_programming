@@ -57,3 +57,7 @@ class Base:
             return(json.loads(json_string))
         else:
             return([])
+    
+    @classmethod
+    def create(cls, **dictionary):
+        pass        
