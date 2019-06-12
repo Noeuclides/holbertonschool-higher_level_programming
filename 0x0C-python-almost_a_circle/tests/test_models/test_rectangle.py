@@ -53,5 +53,10 @@ class Test_Rectangle_Methods(unittest.TestCase):
         r.update(x=1, height=2, y=3, width=4)
         self.assertEqual(r.width, 4)
 
+    def test_update1(self):
+        r = (10, 10, 10, 10)
+        r.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r.width, 4)
+
 if __name__ == '__main__':
     unittest.main()

@@ -56,3 +56,11 @@ class Square(Rectangle):
             args = list(args)
             args.insert(2, args[1])
         super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """dictionary inheritance from Rectangle"""
+        dict_sq = {}
+        dict_sq = super().to_dictionary()
+        del dict_sq["height"]
+        dict_sq["size"] = dict_sq["width"]
+        return(dict_sq)

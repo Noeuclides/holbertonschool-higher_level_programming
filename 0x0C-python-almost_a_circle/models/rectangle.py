@@ -60,6 +60,18 @@ class Rectangle(Base):
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
+    def to_dictionary(self):
+        """
+        rectangle attributes in dictionary
+        """
+        i = self.id
+        x = self.x
+        y = self.y
+        w = self.width
+        h = self.height
+        dict = {"id":i, "width":w, "height":h, "x":x, "y":y}
+        return(dict)
+
     @property
     def width(self):
         """
