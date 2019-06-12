@@ -69,7 +69,7 @@ class Rectangle(Base):
         y = self.y
         w = self.width
         h = self.height
-        dict = {"id":i, "width":w, "height":h, "x":x, "y":y}
+        dict = {"id": i, "width": w, "height": h, "x": x, "y": y}
         return(dict)
 
     @property

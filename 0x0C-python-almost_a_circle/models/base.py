@@ -31,7 +31,7 @@ class Base:
         if list_dictionaries:
             return(json.dumps(list_dictionaries))
         else:
-            return([])                
+            return([])
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -47,4 +47,3 @@ class Base:
                 file.write(cls.to_json_string(array))
             else:
                 file.dump(array, file)
-                
