@@ -2,6 +2,22 @@
 
 import unittest
 from models.rectangle import Rectangle
+import pep8
+
+
+class TestCodeformat(unittest.TestCase):
+
+    def test_pep8(self):
+        """test pep8"""
+        pep8style = pep8.StyleGuide(quite=True)
+        result = pep8style.check_files([
+                                      'models/base.py', 'models/rectangle.py',
+                                      'models/square.py',
+                                      'tests/test_models/test_base.py',
+                                      'tests/test_models/test_rectangle.py',
+                                      'tests/test_models/test_square.py'])
+        self.assertEqual(result.total_errors, 2,
+                         "Found code style errors")
 
 
 class Test_Rectangle_Methods(unittest.TestCase):
