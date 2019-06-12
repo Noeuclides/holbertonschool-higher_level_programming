@@ -41,13 +41,12 @@ class Base:
         listj = []
         f = cls.__name__ + '.json'
         with open(f, 'w', encoding="UTF-8") as file:
-            if list_objs and len(list_objs) != 0:
+            if list_objs:
                 for k in list_objs:
                     listj.append(k.to_dictionary())
-                print(listj, type(listj))
                 file.write(cls.to_json_string(listj))
             else:
-                file.write(listj)
+                file.write("[]")
 
     @staticmethod
     def from_json_string(json_string):
