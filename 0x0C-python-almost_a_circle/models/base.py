@@ -28,10 +28,10 @@ class Base:
         """
         JSON string representation of list_dictionaries
         """
-        if list_dictionaries or len(list_dictionaries) != 0:
+        if list_dictionaries:
             return(json.dumps(list_dictionaries))
         else:
-            return('[]')
+            return("[]")
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -40,13 +40,13 @@ class Base:
         """
         listj = []
         f = cls.__name__ + '.json'
-        with open(f, 'w') as file:
+        with open(f, 'w', encoding="UTF-8") as file:
             if list_objs:
                 for k in list_objs:
                     listj.append(k.to_dictionary())
                 file.write(cls.to_json_string(listj))
             else:
-                file.dump(listj, file)
+                file.write(cls.to_json_string(listj))
 
     @staticmethod
     def from_json_string(json_string):
@@ -57,3 +57,7 @@ class Base:
             return(json.loads(json_string))
         else:
             return([])
+    
+    @classmethod
+    def create(cls, **dictionary):
+        pass        

@@ -61,6 +61,7 @@ class Square(Rectangle):
         """dictionary inheritance from Rectangle"""
         dict_sq = {}
         dict_sq = super().to_dictionary()
-        del dict_sq["height"]
         dict_sq["size"] = dict_sq["width"]
+        del dict_sq["width"]
+        del dict_sq["height"]
         return(dict_sq)
