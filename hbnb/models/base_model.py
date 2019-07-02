@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+
 import datetime
 import uuid
+from models import storage
 """
 module that define the BaseModel
 """
@@ -17,16 +19,14 @@ class BaseModel:
         """
         if kwargs:
             for key in kwargs:
-                if key is '__class__':
-                    setattr(self, str(self.__class__), kwargs[key])
-                else:
+                if key is not '__class__':
                     setattr(self, key, kwargs[key])
 
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
             self.updated_at = datetime.datetime.now()
-
+            storage.new(self)
 
     def __str__(self):
         """
@@ -39,6 +39,7 @@ class BaseModel:
         """
         save updated date method
         """
+        storage.save()
         self.updated_at = datetime.datetime.now()
         return(self.updated_at.isoformat())
 
@@ -46,5 +47,5 @@ class BaseModel:
         """
         return dictionary
         """
-        self.__dict__.update({'__class__' : self.__class__.__name__})
+        self.__dict__.update({str(self.__class__) : self.__class__.__name__})
         return(self.__dict__)
