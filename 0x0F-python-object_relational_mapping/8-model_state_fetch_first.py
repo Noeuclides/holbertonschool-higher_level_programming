@@ -19,4 +19,4 @@ if __name__ == "__main__":
     if resultset is not None:
         print("{}: {}".format(resultset[0], resultset[1]))
     else:
-        print()
+        print("Nothing")
