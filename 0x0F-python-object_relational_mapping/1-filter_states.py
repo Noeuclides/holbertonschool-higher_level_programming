@@ -14,7 +14,9 @@ if __name__ == "__main__":
     )
 
     access = db.cursor()
-    access.execute("SELECT * FROM states WHERE name REGEXP '^N'")
+    access.execute("SELECT * FROM states\
+            WHERE name REGEXP '^N'\
+            COLLATE latin1_general_cs")
     rows = access.fetchall()
     for row in rows:
         print(row)
