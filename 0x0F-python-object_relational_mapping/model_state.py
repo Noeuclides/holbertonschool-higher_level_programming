@@ -20,4 +20,3 @@ class State(Base):
         unique=True,
         autoincrement=True)
     name = Column(String(128), nullable=False)
-
