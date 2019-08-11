@@ -16,4 +16,4 @@ if __name__ == "__main__":
     sel = db.select([states])
     result = connection.execute(sel)
     resultset = result.fetchone()
-    print("{}: {}".format(row[0], row[1]))
+    print("{}: {}".format(resultset[0], resultset[1]))
