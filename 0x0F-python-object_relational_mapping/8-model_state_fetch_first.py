@@ -16,7 +16,7 @@ if __name__ == "__main__":
     sel = db.select([states])
     result = connection.execute(sel)
     resultset = result.fetchone()
-    if resultset is not NULL:
+    if resultset is not None:
         print("{}: {}".format(resultset[0], resultset[1]))
     else:
         print()
