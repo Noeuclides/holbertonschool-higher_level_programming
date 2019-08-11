@@ -15,7 +15,8 @@ if __name__ == "__main__":
 
     access = db.cursor()
     access.execute("SELECT * FROM states\
-            WHERE states.name = '{}'".format(argv[4]))
+            WHERE states.name = '{}'\
+            COLLATE latin1_general_cs".format(argv[4]))
     rows = access.fetchall()
     for row in rows:
         print(row)
