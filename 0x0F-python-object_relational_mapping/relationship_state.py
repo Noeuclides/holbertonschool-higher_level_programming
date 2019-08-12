@@ -21,7 +21,7 @@ class State(Base):
         unique=True,
         autoincrement=True)
     name = Column(String(128), nullable=False)
-    cits = relationship('City', backref="state", cascade='delete, all')
+    cities = relationship('City', backref="state", cascade='delete, all')
 
     def __init__(self, name):
         self.name = name
