@@ -20,3 +20,4 @@ if __name__ == "__main__":
         print("{}: {}".format(row.id, row.name))
         for city in row.cities:
             print("    {}: {}".format(city.id, city.name))
+    s1.close()
