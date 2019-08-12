@@ -17,3 +17,4 @@ if __name__ == "__main__":
     new_state = State('Louisiana')
     s1.add(new_state)
     s1.commit()
+    print(new_state.id)
