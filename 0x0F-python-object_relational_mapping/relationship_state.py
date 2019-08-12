@@ -3,9 +3,8 @@
 links to the MySQL table
 """
 from sqlalchemy import Integer, Column, String
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import City
 
 Base = declarative_base()
 
@@ -22,11 +21,7 @@ class State(Base):
         unique=True,
         autoincrement=True)
     name = Column(String(128), nullable=False)
-    state = relationship(City,
-            backref=backref(
-                'cities',
-                uselist=True,
-                cascade='delete,all'))
+    cits = relationship('City', backref="state", cascade='delete, all')
 
     def __init__(self, name):
         self.name = name

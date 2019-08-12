@@ -4,7 +4,7 @@ links to the MySQL table
 """
 from sqlalchemy import Integer, Column, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import State, Base
+from relationship_state import State, Base
 
 
 class City(Base):
@@ -21,7 +21,7 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(
         Integer,
-        ForeignKey("State.states.id"))
+        ForeignKey("states.id"))
 
     def __init__(self, name):
         self.name = name
