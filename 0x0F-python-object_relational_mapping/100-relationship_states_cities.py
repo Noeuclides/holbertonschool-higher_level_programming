@@ -13,6 +13,7 @@ if __name__ == "__main__":
                         sys.argv[2],
                         sys.argv[3]),
                         pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)
     s1 = session()
     new_state = State('California')
@@ -21,5 +22,4 @@ if __name__ == "__main__":
     s1.add(new_state)
     s1.add(new_city)
     s1.commit()
-    Base.metadata.create_all(engine)
     s1.close()
