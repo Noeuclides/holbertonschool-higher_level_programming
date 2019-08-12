@@ -20,7 +20,7 @@ class City(Base):
         autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(
-        Integer,  
+        Integer,
         ForeignKey("State.states.id"))
 
     def __init__(self, name):
