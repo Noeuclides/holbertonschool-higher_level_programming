@@ -20,3 +20,6 @@ class State(Base):
         unique=True,
         autoincrement=True)
     name = Column(String(128), nullable=False)
+
+    def __init__(self, name):
+        self.name = name
