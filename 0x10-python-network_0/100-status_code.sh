@@ -1,3 +1,3 @@
 #!/bin/bash
-# send POST request, and display body response
-curl -sI POST $1 | head -1 | cut -d" " -f2
+# display only the status code of the response.
+curl -sw %{http_code} $1 -o /dev/null
