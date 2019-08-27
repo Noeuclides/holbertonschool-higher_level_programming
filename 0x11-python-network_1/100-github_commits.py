@@ -18,7 +18,6 @@ try:
         l_commit.append(tupl)
         tupl = ()
         l_commit.sort(key=lambda k: k[2])
-        l_commit.reverse()
     for i in range(10):
         print(l_commit[i][0] + ': ' + l_commit[i][1])
 
