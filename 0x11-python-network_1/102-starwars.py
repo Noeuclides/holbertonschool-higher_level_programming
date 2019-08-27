@@ -48,6 +48,6 @@ try:
     for tup in people_film:
         print(tup[0])
         for item in tup[1]:
-            print("\t", item)
+            print("   ", item)
 except Exception as e:
     print(e)
