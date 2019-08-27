@@ -14,9 +14,7 @@ try:
     req = req.json()
     if len(req) == 0:
         print("No result")
-    elif type(req) is not dict:
-        print("Not a valid JSON")
     else:
         print("[{}] {}".format(req.get('id'), req.get('name')))
 except Exception as e:
-    print(e)
+    print("Not a valid JSON")
