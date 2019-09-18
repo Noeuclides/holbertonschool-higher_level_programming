@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const x = Number(process.argv[2]);
-let s = "";
+let s = '';
 
 if (process.argv.length < 3 || isNaN(x)) {
   console.log('Missing size');
@@ -10,6 +10,6 @@ if (process.argv.length < 3 || isNaN(x)) {
       s += 'X';
     }
     console.log(s);
-    s = "";
+    s = '';
   }
 }
