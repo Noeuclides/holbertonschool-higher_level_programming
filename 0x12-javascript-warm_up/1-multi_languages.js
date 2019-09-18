@@ -1,7 +1,7 @@
 #!/usr/bin/node
 let myVar = 'C is fun';
-let myVar2 = 'Python is cool';
-let myVar3 = 'Javascript is amazing';
 console.log(myVar);
-console.log(myVar2);
-console.log(myVar3);
+myVar = 'Python is cool';
+console.log(myVar);
+myVar = 'Javascript is amazing';
+console.log(myVar);
