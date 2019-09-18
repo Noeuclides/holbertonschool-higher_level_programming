@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const myArray = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-myArray.forEach(printFunc);
+const len = myArray.length;
 
-function printFunc (val) {
-  console.log(val);
+for (let i = 0; i < len; i++) {
+  console.log(myArray[i]);
 }
