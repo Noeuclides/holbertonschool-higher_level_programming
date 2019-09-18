@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const x = process.argv[2];
+const x = Number(process.argv[2]);
 let s = "";
 
 if (process.argv.length < 3 || isNaN(x)) {
