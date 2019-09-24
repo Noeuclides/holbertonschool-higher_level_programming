@@ -32,9 +32,7 @@ class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
-}
 
-class newSquare extends Square {
   charPrint (c) {
     if (c == null) {
       this.print();
@@ -49,4 +47,4 @@ class newSquare extends Square {
   }
 }
 
-module.exports = newSquare;
+module.exports = Square;
