@@ -15,11 +15,14 @@ req(URL, function (error, res, body) {
         if (todo[i].completed === true) {
           count += 1;
         }
-        dictTodo[item] = count;
       } else {
         count = 0;
         item = todo[i].userId;
+        if (todo[i].completed === true) {
+          count += 1;
+        }
       }
+      dictTodo[item] = count;
     }
     console.log(dictTodo);
   }
