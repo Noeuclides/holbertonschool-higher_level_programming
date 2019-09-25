@@ -17,7 +17,7 @@ req(URL, function (error, res, body) {
         }
       } else if (todo[i].userId in dictTodo) {
         if (todo[i].completed === true) {
-          dictTodo[item]++;
+          dictTodo[todo[i].userId]++;
         }
       } else {
         count = 0;
@@ -26,7 +26,7 @@ req(URL, function (error, res, body) {
           count += 1;
         }
       }
-      dictTodo[item] = count;
+      dictTodo[todo[i].userId] = count;
     }
     console.log(dictTodo);
   }
