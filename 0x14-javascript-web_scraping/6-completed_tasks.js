@@ -15,6 +15,10 @@ req(URL, function (error, res, body) {
         if (todo[i].completed === true) {
           count += 1;
         }
+      } else if (todo[i].userId in dictTodo) {
+        if (todo[i].completed === true) {
+          dictTodo[item]++;
+        }
       } else {
         count = 0;
         item = todo[i].userId;
